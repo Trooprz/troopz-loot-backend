@@ -16,4 +16,6 @@ public interface PrizeRepository extends JpaRepository<Prize, UUID> {
 
     @Query("SELECT p FROM Prize p WHERE p.rank = :rank AND p.id = :nextInt")
     Prize findPrizeByRankAndId(String rank, int nextInt);
+
+    void deletePrizeById(int id);
 }

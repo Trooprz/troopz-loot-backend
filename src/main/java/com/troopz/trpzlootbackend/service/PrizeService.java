@@ -6,11 +6,13 @@ import com.troopz.trpzlootbackend.repository.PrizeRepository;
 import com.troopz.trpzlootbackend.repository.UsedPrizeRepository;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
 @Service
+@Transactional
 public class PrizeService {
     PrizeRepository prizeRepository;
     UsedPrizeRepository usedPrizeRepository;
@@ -24,8 +26,8 @@ public class PrizeService {
         return prizeRepository.findAllByRank(rank);
     }
 
-    public void deletePrize(UUID prizeId) {
-        prizeRepository.deleteById(prizeId);
+    public void deletePrize(int prizeId) {
+        prizeRepository.deletePrizeById(prizeId);
     }
 
     public Prize getRandomPrizeByRank(String rank) {
@@ -46,5 +48,9 @@ public class PrizeService {
             randomPriceNumber = rnd.nextInt(prizesLeftInRank);
         }
         return randomPriceNumber;
+    }
+
+    public void savePrize(Prize prize) {
+        prizeRepository.save(prize);
     }
 }

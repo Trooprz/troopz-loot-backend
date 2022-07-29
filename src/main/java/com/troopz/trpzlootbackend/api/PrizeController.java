@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/")
 public class PrizeController {
     PrizeService prizeService;
@@ -30,13 +30,19 @@ public class PrizeController {
     }
 
     @DeleteMapping("/{prizeId}")
-    public void removePrize(@PathVariable UUID prizeId) {
+    public void removePrize(@PathVariable int prizeId) {
         prizeService.deletePrize(prizeId);
     }
 
-    @PutMapping(consumes = "application/json")
+    @PostMapping(path = "/saveUsedPrize", consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
     public void saveUsedPrize(@RequestBody UsedPrize usedPrize) {
         prizeService.saveRandomPrizeInUsedPrizeTable(usedPrize);
+    }
+
+    @PostMapping(value = "/savePrize", consumes = "application/json")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void savePrize(@RequestBody Prize prize) {
+        prizeService.savePrize(prize);
     }
 }

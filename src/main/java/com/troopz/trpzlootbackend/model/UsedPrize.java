@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import java.util.UUID;
 
 @Entity
-@Table(name = "deprecated-loot")
+@Table(name = "usedprizes")
 public class UsedPrize {
 
     @Id
