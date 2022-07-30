@@ -15,18 +15,5 @@ public class TrpzLootBackendApplication {
     public static void main(String[] args) {
         SpringApplication.run(TrpzLootBackendApplication.class, args);
     }
-//
-//    @Bean
-//    CorsConfigurationSource corsConfigurationSource() {
-//        CorsConfiguration configuration = new CorsConfiguration();
-//        configuration.addAllowedOrigin("*");
-//        configuration.setAllowCredentials(true);
-//        configuration.setAllowedMethods(Arrays.asList("POST", "GET", "PUT", "OPTIONS", "DELETE"));
-//        configuration.setAllowedHeaders(Arrays.asList("X-Requested-With", "Content-Type", "Authorization", "Origin",
-//                "Accept", "Access-Control-Request-Method", "Access-Control-Request-Headers"));
-//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//        source.registerCorsConfiguration("/**", configuration);
-//        return source;
-//    }
 
 }

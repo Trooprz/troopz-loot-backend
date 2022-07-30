@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import java.util.UUID;
 
 @Entity
-@Table(name = "usedprizes")
+@Table(name = "usedloot")
 public class UsedPrize {
 
     @Id
