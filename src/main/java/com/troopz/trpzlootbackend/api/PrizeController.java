@@ -24,6 +24,12 @@ public class PrizeController {
         return prizeService.getAllPrizesByRank(rank);
     }
 
+    @GetMapping("/prizes")
+    public List<Prize> getAllPrizes() {
+        return prizeService.getAllPrizes();
+    }
+
+
     @GetMapping("/{rank}/randomPrize")
     public Prize getRandomPrizeByRank(@PathVariable String rank) {
         return prizeService.getRandomPrizeByRank(rank);

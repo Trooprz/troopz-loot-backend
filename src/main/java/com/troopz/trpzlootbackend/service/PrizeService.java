@@ -26,6 +26,10 @@ public class PrizeService {
         return prizeRepository.findAllByRank(rank);
     }
 
+    public List<Prize> getAllPrizes() {
+        return prizeRepository.findAll();
+    }
+
     public void deletePrize(int prizeId) {
         prizeRepository.deletePrizeById(prizeId);
     }
