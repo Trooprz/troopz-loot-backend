@@ -1,0 +1,1 @@
+web java -Dserver.port=$PORT $JAVA_OPTS -Dspring.datasource.url=jdbc:postgresql://ec2-54-76-43-89.eu-west-1.compute.amazonaws.com:5432/dauebt9ns60mum?currentSchema=troopz -Dspring.datasource.username=syaflqtlumpxep -Dspring.datasource.password=b62811645b19684ea1ed82d98d32463d94223df7c0132c94219c92c2cd467514 -jar target/trpz-loot-backend-0.0.1-SNAPSHOT.jar
