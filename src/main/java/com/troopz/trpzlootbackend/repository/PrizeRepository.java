@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Repository
-public interface PrizeRepository extends JpaRepository<Prize, UUID> {
+public interface PrizeRepository extends JpaRepository<Prize, Integer> {
     @Query("SELECT p FROM Prize p WHERE p.rank = :rank")
     List<Prize> findAllByRank(@Param("rank") String rank);
 
