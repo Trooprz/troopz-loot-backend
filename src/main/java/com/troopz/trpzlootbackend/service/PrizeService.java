@@ -46,12 +46,9 @@ public class PrizeService {
 
     public int pickRandomPrizeFromListByRank(String rank) {
         Random rnd = new Random();
-        int randomPriceNumber = 0;
         int prizesLeftInRank = getAllPrizesByRank(rank).size();
-        while (randomPriceNumber == 0) {
-            randomPriceNumber = rnd.nextInt(prizesLeftInRank);
-        }
-        return randomPriceNumber;
+        return rnd.nextInt(prizesLeftInRank);
+
     }
 
     public void savePrize(Prize prize) {

@@ -7,15 +7,11 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.UUID;
-
 @Repository
 public interface PrizeRepository extends JpaRepository<Prize, Integer> {
     @Query("SELECT p FROM Prize p WHERE p.rank = :rank")
     List<Prize> findAllByRank(@Param("rank") String rank);
-
     @Query("SELECT p FROM Prize p WHERE p.rank = :rank AND p.id = :nextInt")
     Prize findPrizeByRankAndId(String rank, int nextInt);
-
     void deletePrizeById(int id);
 }
